@@ -60,7 +60,8 @@
                 url: '/elevator/inside',
                 data: { floor: floor },
                 success: function (response) {
-                    $('#insideElevatorDiv').html('');
+                    @* $('#insideElevatorDiv').html(''); *@
+                    callElevator(floor);
                     FloorElevator();
                 },
                 complete: () => { },

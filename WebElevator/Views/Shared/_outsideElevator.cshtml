@@ -1,21 +1,39 @@
 @model ElevatorVM
+@{ 
+    var elevatorBtn = "";
+}
 
 <table>
     <tbody>
-        @for(int i = Model.MinFloor; i <= Model.MaxFloor; i++)
+        @for(int i = Model.MaxFloor; i >= Model.MinFloor; i--)
         {
+
+            @if (i == Model.MinFloor)
+            {
+                elevatorBtn = "fas fa-arrow-up";
+            }
+            else if(i == Model.MaxFloor)
+            {
+                elevatorBtn = "fas fa-arrow-down";
+            }
+            else
+            {
+                elevatorBtn = "fas fa-arrows-alt-v";
+            }
+
             @if (i == Model.CurrentFloor)
             {
                 <tr>
-                    <td><button onclick="" disabled>Current floor @i (open door)</button></td>
+                    <td><button onclick="" disabled><i class="@elevatorBtn"></i> Current floor @i (open door)</button></td>
                 </tr>
             }
             else
             {
                 <tr>
-                    <td><button onclick="callElevator(@i)">Call to Floor @i</button></td>
+                    <td><button onclick="callElevator(@i)"><i class="@elevatorBtn"></i> Call to Floor @i</button></td>
                 </tr>
             }
+
         }
     </tbody>
 </table>
