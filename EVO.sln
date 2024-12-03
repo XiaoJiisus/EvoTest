@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.002.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElevatorEvoTest", "ElevatorEvoTest\ElevatorEvoTest.csproj", "{ED4E1740-DAF3-49CF-B306-F7B7924418A7}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebElevator", "WebElevator\WebElevator.csproj", "{A5010D77-EB97-43A9-9B60-67A97A1C890F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ED4E1740-DAF3-49CF-B306-F7B7924418A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED4E1740-DAF3-49CF-B306-F7B7924418A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED4E1740-DAF3-49CF-B306-F7B7924418A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED4E1740-DAF3-49CF-B306-F7B7924418A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5010D77-EB97-43A9-9B60-67A97A1C890F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5010D77-EB97-43A9-9B60-67A97A1C890F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5010D77-EB97-43A9-9B60-67A97A1C890F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5010D77-EB97-43A9-9B60-67A97A1C890F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {508A73AC-6C86-4AE1-8E70-E98C4E654D96}
+	EndGlobalSection
+EndGlobal
