@@ -1,0 +1,78 @@
+﻿@{
+    ViewData["Title"] = "Elevator Control System";
+}
+
+<h1>Elevator Control System</h1>
+
+<div>
+    <h2>Outside Call Elevator</h2>
+    <div id="outsideElevatorDiv">
+
+    </div>
+</div>
+<div id="insideElevatorDiv">
+
+</div>
+
+@section Scripts {
+    <script>
+        function FloorElevator()
+        {
+            $.ajax({
+                type: 'post',
+                url: '/elevator/init',
+                success: function (response) {
+                    $('#outsideElevatorDiv').html(response.value.outsideElevatorHtml);
+                },
+                complete: () => { },
+                failure: function (response) {
+                    console.log(response.responseText);
+                },
+                error: function (response) {
+                    console.log(response.responseText);
+                }
+            });
+        }
+        
+        async function callElevator(floor) {
+            await $.ajax({
+                type: 'post',
+                url: '/elevator/call',
+                data: { floor: floor },
+                success: function (response) {
+                    $('#insideElevatorDiv').html('');
+                    $('#insideElevatorDiv').html(response.value.insideElevatorHtml);
+                    FloorElevator();
+                },
+                complete: () => { },
+                failure: function (response) {
+                    console.log(response.responseText);
+                },
+                error: function (response) {
+                    console.log(response.responseText);
+                }
+            });
+        }
+
+        async function pressButton(floor) {
+            await $.ajax({
+                type: 'post',
+                url: '/elevator/inside',
+                data: { floor: floor },
+                success: function (response) {
+                    $('#insideElevatorDiv').html('');
+                    FloorElevator();
+                },
+                complete: () => { },
+                failure: function (response) {
+                    console.log(response.responseText);
+                },
+                error: function (response) {
+                    console.log(response.responseText);
+                }
+            });
+        }
+
+        FloorElevator();
+    </script>
+}

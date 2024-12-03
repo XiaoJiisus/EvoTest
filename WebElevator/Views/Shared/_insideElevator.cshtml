@@ -1,0 +1,16 @@
+@model ElevatorVM
+
+<div>
+    <h2>Press Button Inside Elevator</h2>
+        @for(int i = Model.MinFloor; i <= Model.MaxFloor; i++)
+        {
+            @if(Model.CurrentFloor == i)
+            {
+                <button onclick="pressButton(@i)" disabled>Floor @i</button>
+            }
+            else
+            {
+                <button onclick="pressButton(@i)">Floor @i</button>
+            }
+        }
+</div> 

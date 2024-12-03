@@ -1,0 +1,21 @@
+@model ElevatorVM
+
+<table>
+    <tbody>
+        @for(int i = Model.MinFloor; i <= Model.MaxFloor; i++)
+        {
+            @if (i == Model.CurrentFloor)
+            {
+                <tr>
+                    <td><button onclick="" disabled>Current floor @i (open door)</button></td>
+                </tr>
+            }
+            else
+            {
+                <tr>
+                    <td><button onclick="callElevator(@i)">Call to Floor @i</button></td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
